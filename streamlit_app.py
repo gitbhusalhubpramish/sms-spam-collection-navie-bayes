@@ -32,12 +32,15 @@ ph = sum(cnth)/sum(cnt)
 pxh = pd.DataFrame({"val": valh, "cnt":cnth})
 pxh["cnt"] = pxh["cnt"]/sum(pxh["cnt"])
 
+st.write('''## Data(set)''')
+st.write('''- Total words:''', sum(cnt))
+st.write('''- Spam words:''', sum(cnts))
+st.write('''- ham words:''', sum(cnth))
+
 st.write('''## Probabilities''')
 st.write('''- P(s)''', ps)
 st.write('''- P(h)''', ph)
 
-st.write('''- P(x)''')
-st.bar_chart(px)
 
 psx = xtest.apply(lambda row: (np.log(ps)+ sum(np.log(max(pxs.set_index("val")["cnt"].get(x,0), np.finfo(float).tiny)) for x in row.split())))
 
