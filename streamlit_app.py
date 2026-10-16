@@ -38,3 +38,5 @@ phx = xtest.apply(lambda row: (np.log(ph) + sum(np.log(max(pxh.set_index("val")[
 pred = psx>phx
 ypred = pd.Series(np.where(pred, "spam", "ham"), index=pred.index)
 
+st.write('''## Accuracy''')
+st.write(accuracy_score(ytest, ypred))
