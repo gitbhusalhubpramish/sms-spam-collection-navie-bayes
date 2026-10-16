@@ -10,3 +10,21 @@ This is the output of the model - There's not a lot to show in this model. It's 
 
 Naive-Bayes is a Probability bahsed Supervised Meachine Learning algorithm. It uss Probabilities (Bayes theorem) to predict or classify any data. There are 2 types fo Naive bayes - Categorical and Gussian. I have used Categorical here.
 
+## Feature
+
+This project was made by me to understand Naive-bayes form scratch so it has naivebayes applied form scratch. But also:
+
+- Naive-bayes form scratch
+- Probabilities
+- 96% model accuracy in testing data
+
+## Tech-Stack
+
+This project has python liberies used for data scienct - visulization, calculation and data manipulation. I've used:
+
+- Numpy for calculation
+- streamlit for data presentation
+- pandas for CSV and data manipulation
+- sk-learn for accuracy calculation and data split
+
+
