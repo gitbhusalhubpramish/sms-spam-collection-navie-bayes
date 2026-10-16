@@ -27,4 +27,14 @@ This project has python liberies used for data scienct - visulization, calculati
 - pandas for CSV and data manipulation
 - sk-learn for accuracy calculation and data split
 
+## Work-flow
+
+The work flow of the project look like this:
+
+- **Fetch data:** Here it fethes the data from kaggle dataset.
+- **Data Shepration:** The algorithm shaprate the data into 2(4) parts for training and testing with corresponding x and y.
+- **Calcualte $P(s|x)$:** Here model calculates $P(s|x)$ by calculating the variable required for this using log spacing naive bayes.
+- **Calcualte $P(h|x)$ :** Here model calculates $P(h|x)$ by calculating the variable required for this using log spacing naive bayes.
+- **Comparism:** Here $P(s|x)$ and $P(h|x)$ are compared and returned which one is greater (*s mean spam h mean ham*).
+
 
