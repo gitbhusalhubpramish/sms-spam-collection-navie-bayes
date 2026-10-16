@@ -20,8 +20,6 @@ vals, cnts = np.unique(xtrain.loc[ytrain=="spam"].str.lower().str.findall(r"\b\w
 pxs = pd.DataFrame({"val": vals, "cnt": cnts})
 pxs["cnt"] = pxs["cnt"]/sum(pxs["cnt"])
 
-st.write(sum(cnts), sum(cnt))
-
 ps = sum(cnts)/sum(cnt)
 
 px = pd.DataFrame({"val": val, "cnt": cnt})
@@ -36,6 +34,10 @@ pxh["cnt"] = pxh["cnt"]/sum(pxh["cnt"])
 
 st.write('''## Probabilities''')
 st.write('''- P(s)''', ps)
+st.write('''- P(h)''', hp)
+
+st.write('''- P(x)''')
+st.bar_chart(px)
 
 psx = xtest.apply(lambda row: (np.log(ps)+ sum(np.log(max(pxs.set_index("val")["cnt"].get(x,0), np.finfo(float).tiny)) for x in row.split())))
 
