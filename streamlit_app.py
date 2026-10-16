@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import numpy as np
+import streamlit as st
 
 path = kagglehub.dataset_download("uciml/sms-spam-collection-dataset", path="spam.csv")
 
@@ -30,6 +31,9 @@ ph = sum(cnth)/sum(cnt)
 
 pxh = pd.DataFrame({"val": valh, "cnt":cnth})
 pxh["cnt"] = pxh["cnt"]/sum(pxh["cnt"])
+
+st.write('''## Probabilities''')
+st.write('''- P(s)''', ps)
 
 psx = xtest.apply(lambda row: (np.log(ps)+ sum(np.log(max(pxs.set_index("val")["cnt"].get(x,0), np.finfo(float).tiny)) for x in row.split())))
 
