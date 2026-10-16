@@ -16,4 +16,23 @@ val, cnt = np.unique(xtrain.str.lower().str.findall(r"\b\w+\b").explode().dropna
 
 vals, cnts = np.unique(xtrain.loc[ytrain=="spam"].str.lower().str.findall("\b\w+\b").explode().dropna(), return_counts=True)
 
+pxs = pd.DataFrame({"val": vals, "cnt": cnts})
+pxs["cnt"] = pxs["cnt"]/sum(pxs["cnt"])
+
+ps = sum(cnts)/sum(cnt)
+
+px = pd.DataFrame({"val": val, "cnt": cnt})
+px["cnt"] = px["cnt"]/sum(cnt)
+
+valh, cnth= np.unique(xtrain.loc[ytrain=="ham"].str.lower().str.findall(r"\b\w+\b").explode().dropna(), return_counts=True)
+
+ph = sum(cnth)/sum(cnt)
+
+pxh = pd.DataFrame({"val": valh, "cnt":cnth})
+pxh["cnt"] = pxh["cnt"]/sum(pxh["cnt"])
+
+psx = xtest.apply(lambda row: (np.log(ps)+ sum(np.log(max(pxs.set_index("val")["cnt"].get(x,0), np.finfo(float).tiny)) for x in row.split())))
+
+phx = xtest.apply(lambda row: (np.log(ph) + sum(np.log(max(pxh.set_index("val")["cnt"].get(x,0), np.finfo(float).tiny)) for x in row.split())))
+
 
