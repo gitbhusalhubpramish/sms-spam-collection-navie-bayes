@@ -20,6 +20,8 @@ vals, cnts = np.unique(xtrain.loc[ytrain=="spam"].str.lower().str.findall("\b\w+
 pxs = pd.DataFrame({"val": vals, "cnt": cnts})
 pxs["cnt"] = pxs["cnt"]/sum(pxs["cnt"])
 
+st.write(sum(cnts), sum(cnt))
+
 ps = sum(cnts)/sum(cnt)
 
 px = pd.DataFrame({"val": val, "cnt": cnt})
