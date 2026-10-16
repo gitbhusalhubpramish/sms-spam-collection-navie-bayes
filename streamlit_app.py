@@ -15,7 +15,7 @@ uq = set(xtrain.str.lower().str.findall(r"\b\w+\b").explode().dropna())
 
 val, cnt = np.unique(xtrain.str.lower().str.findall(r"\b\w+\b").explode().dropna(), return_counts=True)
 
-vals, cnts = np.unique(xtrain.loc[ytrain=="spam"].str.lower().str.findall("\b\w+\b").explode().dropna(), return_counts=True)
+vals, cnts = np.unique(xtrain.loc[ytrain=="spam"].str.lower().str.findall(r"\b\w+\b").explode().dropna(), return_counts=True)
 
 pxs = pd.DataFrame({"val": vals, "cnt": cnts})
 pxs["cnt"] = pxs["cnt"]/sum(pxs["cnt"])
