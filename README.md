@@ -5,3 +5,8 @@ In this project I have applied Naive-Bayes form scratch in [Sms spam collection]
 <img src="visual.jpg"/>
 
 This is the output of the model - There's not a lot to show in this model. It's hard to visulize. Main thing here is the accuracy and prob distribution which is hard to show in a graph.
+
+## Small intro to Naive-Bayes
+
+Naive-Bayes is a Probability bahsed Supervised Meachine Learning algorithm. It uss Probabilities (Bayes theorem) to predict or classify any data. There are 2 types fo Naive bayes - Categorical and Gussian. I have used Categorical here.
+
