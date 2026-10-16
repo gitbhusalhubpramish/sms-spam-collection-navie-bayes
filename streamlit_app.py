@@ -34,7 +34,7 @@ pxh["cnt"] = pxh["cnt"]/sum(pxh["cnt"])
 
 st.write('''## Probabilities''')
 st.write('''- P(s)''', ps)
-st.write('''- P(h)''', hp)
+st.write('''- P(h)''', ph)
 
 st.write('''- P(x)''')
 st.bar_chart(px)
