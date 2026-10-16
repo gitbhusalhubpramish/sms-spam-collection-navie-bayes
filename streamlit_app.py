@@ -2,6 +2,7 @@ import kagglehub
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+import numpy as np
 
 path = kagglehub.dataset_download("uciml/sms-spam-collection-dataset", path="spam.csv")
 
