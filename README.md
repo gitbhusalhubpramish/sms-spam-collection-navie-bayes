@@ -37,4 +37,14 @@ The work flow of the project look like this:
 - **Calcualte $P(h|x)$ :** Here model calculates $P(h|x)$ by calculating the variable required for this using log spacing naive bayes.
 - **Comparism:** Here $P(s|x)$ and $P(h|x)$ are compared and returned which one is greater (*s mean spam h mean ham*).
 
+## What did I learn?
 
+I had made this project to learn Naive bayes form scratch. Of cource, I had learnt that. But other stuff too like:
+
+- Naive-bayes
+- Probabilities
+- Catorization
+
+## Some extra info...
+
+I have been learning Meaching Learning so I make note and make atleast one project for each. I have writtern a jupiter notebook to plan and make this work then I make a pyton script file with the help of streamlit so that I can host and support Hackclub. Most of the progress of learning the algorithm is in my notebook while I struggle in streamlit too. I made this to learn so it has very less AI implimented.
