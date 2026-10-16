@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 
 path = kagglehub.dataset_download("uciml/sms-spam-collection-dataset", path="spam.csv")
 
-df = pd.read_csv(path)
+df = pd.read_csv(path, encoding="latin-1")
 
 xtrain, xtest, ytrain, ytest = train_test_split(df["v2"], df["v1"], test_size=0.2, random_state=42)
 
