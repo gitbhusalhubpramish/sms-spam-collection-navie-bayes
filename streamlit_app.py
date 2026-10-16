@@ -35,4 +35,6 @@ psx = xtest.apply(lambda row: (np.log(ps)+ sum(np.log(max(pxs.set_index("val")["
 
 phx = xtest.apply(lambda row: (np.log(ph) + sum(np.log(max(pxh.set_index("val")["cnt"].get(x,0), np.finfo(float).tiny)) for x in row.split())))
 
+pred = psx>phx
+ypred = pd.Series(np.where(pred, "spam", ham), index=pred.index)
 
