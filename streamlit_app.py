@@ -43,8 +43,15 @@ st.write('''This project uses naive bayes algorithm to predict whether a message
 st.write('''- P(s)''', ps)
 st.write('''- P(h)''', ph)
 
+st.write('''### Prediction''')
+st.write('''This is a probability bashed algorithm so it compares the probability of being spama and ham and returns the result. The probability is calculated by:''')
+st.write('''
+$$
+P(A|B) = \frac{P(A) P(B|B)}{P(B)}
+$$
+''')
 
-
+st.write('''*More details are given in my [notes](https://github.com/gitbhusalhubpramish/ml-notes/tree/main/0.007%20navie-bayes)*''')
 
 psx = xtest.apply(lambda row: (np.log(ps)+ sum(np.log(max(pxs.set_index("val")["cnt"].get(x,0), np.finfo(float).tiny)) for x in row.split())))
 
@@ -54,4 +61,4 @@ pred = psx>phx
 ypred = pd.Series(np.where(pred, "spam", "ham"), index=pred.index)
 
 st.write('''## Accuracy''')
-st.write(accuracy_score(ytest, ypred))
+st.write('''This Naive-Bayes model has a outstanding accuracy of ''',accuracy_score(ytest, ypred))
