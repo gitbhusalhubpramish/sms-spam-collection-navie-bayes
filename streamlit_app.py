@@ -33,13 +33,17 @@ pxh = pd.DataFrame({"val": valh, "cnt":cnth})
 pxh["cnt"] = pxh["cnt"]/sum(pxh["cnt"])
 
 st.write('''## Data(set)''')
+st.write('''This project uses [sms spam collection](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset) dataset in kaggle. The dataset has some sms messages labeled as spam and ham. The information of the dataset(numbers only) is:''')
 st.write('''- Total words:''', sum(cnt))
 st.write('''- Spam words:''', sum(cnts))
 st.write('''- ham words:''', sum(cnth))
 
-st.write('''## Probabilities''')
+st.write('''## Algorithm''')
+st.write('''This project uses naive bayes algorithm to predict whether a message is spam or ham from the dataset given. The parameter for the model are just the probability of being ham, spam and likehood. Since dataset is too large - 8000 total unique so we can't display likehood so we can display:''')
 st.write('''- P(s)''', ps)
 st.write('''- P(h)''', ph)
+
+
 
 
 psx = xtest.apply(lambda row: (np.log(ps)+ sum(np.log(max(pxs.set_index("val")["cnt"].get(x,0), np.finfo(float).tiny)) for x in row.split())))
