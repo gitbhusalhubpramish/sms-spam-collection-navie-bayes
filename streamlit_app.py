@@ -39,7 +39,7 @@ st.write('''- Spam words:''', sum(cnts))
 st.write('''- ham words:''', sum(cnth))
 
 st.write('''## Algorithm''')
-st.write('''This project uses naive bayes algorithm to predict whether a message is spam or ham from the dataset given. The parameter for the model are just the probability of being ham, spam and likehood. Since dataset is too large - 8000 total unique so we can't display likehood so we can display:''')
+st.write('''This project uses naive bayes algorithm to predict whether a message is spam or ham from the dataset given. The parameter for the model are just the probability of being ham, spam and likehood. Since dataset is too large - 71000 total unique so we can't display likehood so we can display:''')
 st.write('''- P(s)''', ps)
 st.write('''- P(h)''', ph)
 
