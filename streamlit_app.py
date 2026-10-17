@@ -45,7 +45,7 @@ st.write('''- P(h)''', ph)
 
 st.write('''### Prediction''')
 st.write('''This is a probability bashed algorithm so it compares the probability of being spama and ham and returns the result. The probability is calculated by:''')
-st.mardown(r'''
+st.markdown(r'''
 $$
 P(A|B) = \frac{P(A) P(B|A)}{P(B)}
 $$
